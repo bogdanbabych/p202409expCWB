@@ -106,6 +106,8 @@ http://localhost/cgi-bin/first.pl
 http://localhost/cgi-bin/firstpython.py
 ~~~
 
+these scripts are in ```/src/Sites``` directory in this repository
+
 if the cgi scripts do not run, e.g., you get the error message:
 
 ~~~
@@ -278,6 +280,60 @@ Bogdans-MBP:~ bogdan$
 If this runs, the cqp is properly configured.
 
 ### C. Test CWB throught perl CGI API via the web interface
+#### C.1. Copy the html files with a cgi form to your script directory (cgi-bin, or in my case: ~/Sites)
+
+- copy the file ```dickens.html``` from the directory ```./src/Sites/``` in this repository.
+
+- in browser put: ```http://localhost/~bogdan/dickens.html```
+
+- copy the cgi perl script files from this repository /src/Sites/ to your local directory ~/Sites/
+
+You may get the messages about missing libraries:
+
+~~~
+Software error:
+Can't locate smallutils.pm in @INC (you may need to install the smallutils module) (@INC contains: /corpora/tools /Library/Perl/5.34/darwin-thread-multi-2level /Library/Perl/5.34 /Network/Library/Perl/5.34/darwin-thread-multi-2level /Network/Library/Perl/5.34 /Library/Perl/Updates/5.34.1/darwin-thread-multi-2level /Library/Perl/Updates/5.34.1 /System/Library/Perl/5.34/darwin-thread-multi-2level /System/Library/Perl/5.34 /System/Library/Perl/Extras/5.34/darwin-thread-multi-2level /System/Library/Perl/Extras/5.34) at /Library/WebServer/CGI-Executables/cqp.pl line 13.
+BEGIN failed--compilation aborted at /Library/WebServer/CGI-Executables/cqp.pl line 13.
+For help, please send mail to the webmaster (you@example.com), giving this error message and the time and date of the error.
+~~~
+
+To fix this:
+
+https://stackoverflow.com/questions/48733474/cant-locate-gdbm-file-pm
+
+~~~
+cpan GDBM_File
+~~~
+
+
+If there are any further problems with @INC variable:  
+
+~~~
+Software error:
+Can't locate smallutils.pm in @INC (you may need to install the smallutils module) (@INC contains: /corpora/tools /Library/Perl/5.34/darwin-thread-multi-2level /Library/Perl/5.34 /Network/Library/Perl/5.34/darwin-thread-multi-2level /Network/Library/Perl/5.34 /Library/Perl/Updates/5.34.1/darwin-thread-multi-2level /Library/Perl/Updates/5.34.1 /System/Library/Perl/5.34/darwin-thread-multi-2level /System/Library/Perl/5.34 /System/Library/Perl/Extras/5.34/darwin-thread-multi-2level /System/Library/Perl/Extras/5.34) at /Library/WebServer/CGI-Executables/cqp.pl line 13.
+BEGIN failed--compilation aborted at /Library/WebServer/CGI-Executables/cqp.pl line 13.
+For help, please send mail to the webmaster (you@example.com), giving this error message and the time and date of the error.
+~~~
+
+Update the ```use lib ("/dir1", "/dir2");``` line in the script, to point to the location of the python tools used by the scripts..
+
+https://stackoverflow.com/questions/2526804/how-is-perls-inc-constructed
+
+Update any links and references in the scripts, which point to a different location
+
+The structure of the scripts / files used here is the following:
+
+Scripts and html files
+~~~
+/Users/bogdan/Sites/
+    cqp.conf		cqp.pl.v01		dickens.html.v01	firstpython.py		index.html.en		jscript			tools
+    cqp.pl			dickens.html		first.pl		grm-en.html		info.pl			query.log
+
+/Users/bogdan/Sites/tools
+    cqp.conf	cqpquery1.pm	messages.conf	smallutils.pm
+~~~
+
+
 
 
 

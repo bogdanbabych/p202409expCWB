@@ -212,6 +212,8 @@ cqp
 The manual on using cqp interface is here:  
 https://cwb.sourceforge.io/files/CQP_Manual.pdf
 
+(it is also in the ./docs/ directory in this repository)
+
 The cqp session:
 ~~~
 
@@ -274,6 +276,10 @@ Bogdans-MBP:~ bogdan$
 ~~~
 
 If this runs, the cqp is properly configured.
+
+### C. Test CWB throught perl CGI API via the web interface
+
+
 
 
 

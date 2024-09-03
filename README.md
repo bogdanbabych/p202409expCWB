@@ -6,7 +6,7 @@ experiments with CWB
 
 (```./docs/cwb-mac.txt``` file contains  the output of these commands)
 
-1. Installing CWB on local machine (instructions tested for Mac Sonoma 14.6.1 (23G93))
+#### 1. Installing CWB on local machine (instructions tested for Mac Sonoma 14.6.1 (23G93))
 
 documentation on: https://cwb.sourceforge.io/install.php
 
@@ -17,14 +17,14 @@ brew install cwb3
 ~~~
 
 
-2. creating directories for the registry and data
+#### 2. creating directories for the registry and data
 
 ~~~
 /Users/bogdan/corpora
 /opt/homebrew/share/cwb/registry
 ~~~
 
-3. update cpan for installing perl libraries (required by old implementation)
+#### 3. update cpan for installing perl libraries (required by old implementation)
 ~~~
 cpan
 ~~~
@@ -41,12 +41,12 @@ PERL_MM_OPT="INSTALL_BASE=/Users/bogdan/perl5"; export PERL_MM_OPT;
 
 ~~~
 
-4. as indicated above, update the file ```.bash_profile ```
+#### 4. as indicated above, update the file ```.bash_profile ```
 
 the results are in ```./docs/.bash_profile*``` files
 
 
-5. install cpan CWB libraries:
+#### 5. install cpan CWB libraries:
 
 ~~~
 cpan CWB
@@ -55,7 +55,7 @@ sudo cpan CWB::Web
 sudo cpan CWB::CQI
 ~~~
 
-6. install and configure apache2 web server on localhost (for prototyping)
+#### 6. install and configure apache2 web server on localhost (for prototyping)
 
 (output and links in file ```./docs/apache-run.txt```)
 
@@ -96,7 +96,7 @@ type in a browser:
 ```http://localhost/```
 
 
-Test if cgi scripts can run:
+#### 7. test if cgi scripts can run, and configure if necessary:
 copy the perl and python scripts from ```./docs/first.pl ; ./docs/firstpython.py``` into the executable directory:
 
 ```/Library/WebServer/CGI-Executables```
@@ -131,7 +131,7 @@ and in the log file ```/private/var/log/apache2/error_log```:
 , you can follow the steps under this link:  
 https://discussions.apple.com/docs/DOC-250007792
 
--- also a copy in the ./docs/ directory
+-- also a copy in the local directory: ```./docs/DOC-250007792.html``` , or ./docs .pdf file.
 
 Basically, you update configuration files for your apache web server, the page tells you how to do it for your local website in the home directory /Users/bogdan/Sites, not system-wide, but possibly you can adjust the correct lines also for the system-wide configuration (I haven't tried this).
 

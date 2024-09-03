@@ -200,7 +200,86 @@ HOME /Users/bogdan/corpora/DemoCorpus-German/data
 INFO /Users/bogdan/corpora/DemoCorpus-German/data/.info
 ~~~
 
-Now the CWB has the data and can be tested on them, so make sure this runs in your command line:
+
+#### B.4. Test CWB in the command line
+Now the CWB has the data and can be tested on them, so make sure this runs in your terminal in the command line:
+
+~~~
+cqp
+[no corpus]>
+~~~
+
+The manual on using cqp interface is here:  
+https://cwb.sourceforge.io/files/CQP_Manual.pdf
+
+The cqp session:
+~~~
+
+Bogdans-MBP:~ bogdan$ cqp
+[no corpus]> show corpora;
+System corpora:
+ D: DICKENS
+ G: GERMAN-LAW
+[no corpus]> DICKENS;
+DICKENS> "preserve";
+    42790: d dog-kennel are - a very <preserve> of butterflies , as I rem
+   469137: cled in their orbits , to <preserve> inviolate a system of whi
+   480711: e covered up - perhaps to <preserve> it for the son with whom
+   547487: ghton , Sussex , ' and to <preserve> them in his desk with gre
+   579253: e could do no better than <preserve> her image in his mind as
+   791335: ions , and as I choose to <preserve> the decencies of life , s
+   855396: atly relieved . I wish to <preserve> the good opinion of all h
+  1151311: creature , barely able to <preserve> her sitting posture by st
+  1161944: iss Louisa that you still <preserve> that bottle . Well ! If y
+  1162727: it too strong , and so we <preserve> an understanding . I say
+  1265120: aming countenance he will <preserve> for half-an-hour afterwar
+  1294118: , in order that she might <preserve> that appearance of being
+  1324634: to a trunk were charms to <preserve> its owner from sorrow and
+  1421919: onal inducement to her to <preserve> the strictest silence reg
+  1518169: ldly ; ' it would help to <preserve> habits of frugality , you
+  1633852: is head , and prosper and <preserve> him . She was hurrying pa
+  1648475: actions , and that we may <preserve> the self-respect which a
+  1655346:  situated as Squeers , to <preserve> such a friend as himself-
+  1751566: awing forth her dagger to <preserve> the one at the cost of th
+  2038824: mposure I would desire to <preserve> ) , and your mother , are
+  2123621:  destroy it , in order to <preserve> the property to his broth
+  2330196:  exerting every muscle to <preserve> the advantage they have g
+  2355400: ly open ? Nonsense . Just <preserve> the order for an autograp
+  2377358: ardswoman is appointed to <preserve> order , and a similar reg
+  2464296: l ineffectual attempts to <preserve> his perpendicular , the y
+  2532203: eman , winking upon us to <preserve> silence , won a pair of g
+  2532831: hey cannot do better than <preserve> and maintain - we say , a
+  2533110: ife will be , to gain and <preserve> the esteem of your husban
+  2547103: they are still careful to <preserve> their character for amiab
+  2551743: ntle trot , the better to <preserve> the circulation , and bri
+  2642877: id the Marquis , " I will <preserve> the honour and repose of
+  2696198: . It was a hard matter to <preserve> the innocent deceit of wh
+  2757818:  after several efforts to <preserve> his gravity , burst into
+  2833250: yed himself to and fro to <preserve> his balance , and , looki
+  2859861: nt to do , but meaning to <preserve> him or be killed herself
+  2915948: h , but is constrained to <preserve> a decent solemnity , and
+  3062070: nsport of frenzy . ' Lord <preserve> us ! ejaculated Mr. Pickw
+  3224852: their arms around them to <preserve> them from danger . An ins
+  3248360:  the table a good deal to <preserve> order ; then he had a con
+  3299062: smiling , but managing to <preserve> his gravity , he drew for
+  3305584: at the back of a chair to <preserve> his perpendicular . Mr. S
+DICKENS> GERMAN-LAW;
+GERMAN-LAW> "bewahren";
+    55171: eiten Verschwiegenheit zu <bewahren> . Dies gilt nicht f�r Mit
+   538194: instweilen vor Schaden zu <bewahren> . � 363 . ( 1 ) Anweisung
+   646075: ngt , Verschwiegenheit zu <bewahren> ; � 138 des Strafgesetzbu
+GERMAN-LAW> exit;
+Bogdans-MBP:~ bogdan$
+
+~~~
+
+If this runs, the cqp is properly configured.
+
+
+
+
+
+
 
 
 

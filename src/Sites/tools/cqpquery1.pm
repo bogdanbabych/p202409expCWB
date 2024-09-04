@@ -42,7 +42,8 @@ sub prefixline {
     unless (($titleid) and (length($titleid)<5)) {
 	$titleid='&gt;&gt;';
     };
-    return qq{<td><input type="checkbox" name="cpos" value="$cpos"></td><td><a href="$cgipath/showcontext-cqp.pl?cpos=$cpos" target="_blank">$titleid</td>}
+    # return qq{<td><input type="checkbox" name="cpos" value="$cpos"></td><td><a href="$cgipath/showcontext-cqp.pl?cpos=$cpos" target="_blank">$titleid</td>}
+	return qq{<td><input type="checkbox" name="cpos" value="$cpos"></td><td><a href="$cgipath/showcontext.pl?cpos=$cpos" target="_blank">$titleid</td>}
 }
 
 sub printtransscores {
@@ -113,7 +114,8 @@ sub showconcordance {
     print STDOUT qq{$searchstring<br/>} if length($searchstring)>100; # doesn't fit in the title
     print $messages{'back'};
 
-    print STDOUT qq{<form name="showcontext" action="$cgipath/showcontext-cqp.pl" method="post">\n};
+    # print STDOUT qq{<form name="showcontext" action="$cgipath/showcontext-cqp.pl" method="post">\n};
+	print STDOUT qq{<form name="showcontext" action="$cgipath/showcontext.pl" method="post">\n};
     print STDOUT qq{<table>\n};
     print STDOUT qq{<tbody>\n};
     $outcount=0;

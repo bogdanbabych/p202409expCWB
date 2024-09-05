@@ -1,0 +1,1 @@
+cwb-encode -d /corpora/data/example -xsBC9 -c ascii -f example.vrt -R /usr/local/share/cwb/registry/example -P pos -P lemma -S s

@@ -305,6 +305,11 @@ https://stackoverflow.com/questions/48733474/cant-locate-gdbm-file-pm
 cpan GDBM_File
 ~~~
 
+or simply comment the line:
+use GDBM_File
+
+
+
 
 If there are any further problems with @INC variable:  
 
@@ -332,6 +337,83 @@ Scripts and html files
 /Users/bogdan/Sites/tools
     cqp.conf	cqpquery1.pm	messages.conf	smallutils.pm
 ~~~
+
+#### C.2. Test queries, correct errors in the cgi scripts if any
+
+put the search line, e.g.: (% means lemma)
+
+question
+acquit% 
+...
+
+test concordance and collocation functionality, showing contexts, etc.
+
+
+
+### D. Compile a new corpus
+#### D.1. Monolingual corpus
+
+- Download some corpus data into a text file. The example is in in file:  
+p202409expCWB/corpora101/plain-text-101.txt (these are OpenAI Whisper transcription of some German medical podcasts, around 150k words)
+
+- (this step is optional; you can use it only if you need linguistic annotation, such as part-of-speech and lemma annotation):  
+Download a part-of-speech TreeTagger from LancsBox:
+http://corpora.lancs.ac.uk/lancsbox/download.php
+
+- install and locate the TreeTagger, e.g.:  
+```/Users/bogdan/LancsBox/resources/tagger```
+
+- copy the file ```tree-tagger-german2.sh``` and ```stage01run-TreeTagger.sh``` to the directory ```/Users/bogdan/LancsBox/resources/tagger/bin```
+and run the script ```stage01run-TreeTagger.sh``` (from the ```resources/tagger/bin``` directory)
+``` ```
+
+the output should look like:
+
+~~~
+bash-3.2$ ./tree-tagger-german2.sh </Users/bogdan/elisp/proj/p202409expCWB/corpora101/plain-text-101.txt >/Users/bogdan/elisp/proj/p202409expCWB/corpora101/med-podc-de102.vert
+	reading parameters ...
+	tagging ...
+188000	 finished.
+~~~
+
+alternatively, you can:  
+
+- use the GitHub/colab tagger (TreeTagger or Stanza) on 
+```https://github.com/iued-uni-heidelberg/corpustools/tree/main```
+
+repositories / examples: 
+
+https://github.com/iued-uni-heidelberg/corpustools/blob/main/S101lemDE.ipynb  
+https://github.com/iued-uni-heidelberg/corpustools/blob/main/S101lemHYstanza.ipynb  
+
+The output should be a 3-column file with the fields: word \t part-of-speech \t lemma, like here:   
+Du	PPER	du  
+hörst	VBFIN	hören  
+den	ART	die  
+Hormon	NN	Hormon  
+Reset	NN	Reset  
+Podcast	NN	Podcast  
+.	$.	.  
+
+
+- after the 3-column .vert file is created, run the corpus compilation script:  
+```/Users/bogdan/elisp/proj/p202409expCWB/corpora101/run101-compile-corpus-med-podc-de102.sh```
+
+the commands there use the cwb external scripts for corpus compilation:
+
+~~~
+cwb-encode -d /Users/bogdan/corpora/demo-podc-de -xsBC9 -c utf8 -R /opt/homebrew/share/cwb/registry/demo-podc-de -P pos -P lemma < ./med-podc-de102.vert
+cwb-make -M 800 demo-podc-de
+
+~~~
+
+here the data directory, the encoding, registry file, the positional (and optionally -- strucural (via -S)) attributes are specified
+After this commmand is complete, you can add the reference to the corpus into the search interface (html file), see example on
+
+and query this corpus the same way how the demo corpora have been queried. All should work the same way.
+
+
+
 
 
 

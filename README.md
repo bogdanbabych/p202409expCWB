@@ -413,7 +413,8 @@ After this commmand is complete, you can add the reference to the corpus into th
 ```demoTRN.html``` file in this repository under
 ``` p202409expCWB/src/Sites/ ```
 
-you can query this corpus the same way how the demo corpora have been queried. All should work the same way.
+you can query this corpus the same way how the demo corpora have been queried. All should work the same way, just type in your browser:  
+```http://localhost/~bogdan/demoTRN.html ```
 
 
 

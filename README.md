@@ -376,7 +376,7 @@ bash-3.2$ ./tree-tagger-german2.sh </Users/bogdan/elisp/proj/p202409expCWB/corpo
 188000	 finished.
 ~~~
 
-alternatively, you can:  
+> alternatively, you can:  
 
 - use the GitHub/colab tagger (TreeTagger or Stanza) on 
 ```https://github.com/iued-uni-heidelberg/corpustools/tree/main```
@@ -394,6 +394,17 @@ Hormon	NN	Hormon
 Reset	NN	Reset  
 Podcast	NN	Podcast  
 .	$.	.  
+
+
+> alternatively, you can download a local installation of spacy:
+
+see help on: https://stackoverflow.com/questions/47295316/importerror-no-module-named-spacy-en
+
+```sudo pip3 install spacy```  
+```sudo python3 -m spacy download en```
+
+(still doesn't work on my Mac)
+
 
 
 After the 3-column .vert file is created: 

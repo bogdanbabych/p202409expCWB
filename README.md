@@ -397,7 +397,7 @@ Podcast	NN	Podcast
 
 
 - after the 3-column .vert file is created, run the corpus compilation script:  
-```/Users/bogdan/elisp/proj/p202409expCWB/corpora101/run101-compile-corpus-med-podc-de102.sh```
+```/Users/bogdan/elisp/proj/p202409expCWB/corpora101/stage02compile-corpus/run101-compile-corpus-med-podc-de102.sh```
 
 the commands there use the cwb external scripts for corpus compilation:
 
@@ -410,29 +410,10 @@ cwb-make -M 800 demo-podc-de
 here the data directory, the encoding, registry file, the positional (and optionally -- strucural (via -S)) attributes are specified
 After this commmand is complete, you can add the reference to the corpus into the search interface (html file), see example on
 
-and query this corpus the same way how the demo corpora have been queried. All should work the same way.
+```demoTRN.html``` file in this repository under
+``` p202409expCWB/src/Sites/ ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+you can query this corpus the same way how the demo corpora have been queried. All should work the same way.
 
 
 

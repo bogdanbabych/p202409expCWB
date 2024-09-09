@@ -396,7 +396,12 @@ Podcast	NN	Podcast
 .	$.	.  
 
 
-- after the 3-column .vert file is created, run the corpus compilation script:  
+After the 3-column .vert file is created: 
+
+- create the data directory to put the compiled corpus, e.g.:
+```mkdir /Users/bogdan/corpora/demo-podc-de``` 
+
+-- run the corpus compilation script:  
 ```/Users/bogdan/elisp/proj/p202409expCWB/corpora101/stage02compile-corpus/run101-compile-corpus-med-podc-de102.sh```
 
 the commands there use the cwb external scripts for corpus compilation:
@@ -418,6 +423,8 @@ you can query this corpus the same way how the demo corpora have been queried. A
 
 
 
+#### D.2. Bilingual parallel corpus
 
+In the current implementation, CWB compiles two separate monolingual corpora and 'alignes' them using 'alignment attiributes', which use structural attributes, typically a 'segment' with an xml identifier attribute, e.g., '<s id=101>'; the identifiers in the aligned segments need to be the same in both coprora. 
 
 

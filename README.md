@@ -425,6 +425,6 @@ you can query this corpus the same way how the demo corpora have been queried. A
 
 #### D.2. Bilingual parallel corpus
 
-In the current implementation, CWB compiles two separate monolingual corpora and 'alignes' them using 'alignment attiributes', which use structural attributes, typically a 'segment' with an xml identifier attribute, e.g., '<s id=101>'; the identifiers in the aligned segments need to be the same in both coprora. 
+In the current implementation, CWB compiles two separate monolingual corpora and 'alignes' them using 'alignment attiributes', which use structural attributes, typically a 'segment' with an xml identifier attribute, e.g., ````<s id=101>'```; the identifiers in the aligned segments need to be the same in both coprora. 
 
 
